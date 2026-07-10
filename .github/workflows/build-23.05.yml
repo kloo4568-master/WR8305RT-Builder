@@ -7,7 +7,7 @@ on:
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
-  REPO_BRANCH: openwrt-23.05-k5.15 
+  REPO_BRANCH: openwrt-23.05
   TZ: Asia/Shanghai
 
 jobs:
@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          ref: openwrt-23.05-k5.15
+          ref: ${{ env.REPO_BRANCH }}
 
       - name: Free disk space
         uses: jlumbroso/free-disk-space@main
