@@ -1,4 +1,4 @@
-1name: OpenWrt 23.05 Builder
+name: OpenWrt 23.05 Builder
 
 on:
   workflow_dispatch:
