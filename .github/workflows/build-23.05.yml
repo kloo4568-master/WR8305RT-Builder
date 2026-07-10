@@ -1,4 +1,4 @@
-name: OpenWrt 23.05 Builder
+1name: OpenWrt 23.05 Builder
 
 on:
   workflow_dispatch:
@@ -76,6 +76,7 @@ jobs:
           echo "CONFIG_TARGET_ramips=y" >> .config
           echo "CONFIG_TARGET_ramips_mt7620=y" >> .config
           echo "CONFIG_TARGET_ramips_mt7620_DEVICE_zbtlink_zbt-wr8305rt=y" >> .config
+          cp ../.config .config
           make defconfig
           cp .config immortalwrt-${{fromJSON(matrix.info).TYPE}}-default.config
       
