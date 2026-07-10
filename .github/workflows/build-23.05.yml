@@ -73,8 +73,9 @@ jobs:
       - name: Generate default configuration
         run: |
           cd openwrt
-          echo "CONFIG_TARGET_x86=y" >> .config
-          echo "CONFIG_TARGET_x86_64=y" >> .config
+          echo "CONFIG_TARGET_ramips=y" >> .config
+          echo "CONFIG_TARGET_ramips_mt7620=y" >> .config
+          echo "CONFIG_TARGET_ramips_mt7620_DEVICE_zbtlink_zbt-wr8305rt=y" >> .config
           make defconfig
           cp .config immortalwrt-${{fromJSON(matrix.info).TYPE}}-default.config
       
